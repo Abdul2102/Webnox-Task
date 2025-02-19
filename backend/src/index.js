@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 connection();
 
-app.use("uploads", express.static("uploads"));
+app.use("uploads", express.static("src/uploads"));
 
 app.use("/auth", userRoutes);
 app.use("/posts",postRoutes);

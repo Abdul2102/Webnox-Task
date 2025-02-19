@@ -6,12 +6,12 @@ import Post from "./Post";
 
 const Profile = () => {
   const [posts, setPosts] = useState([]);
-  const _id = localStorage.getItem("userId");
-  console.log(_id);
+  const id = localStorage.getItem("userId");
+  console.log(id);
 
   const fecthById = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/auth/${_id}`);
+      const res = await axios.get(`http://localhost:5000/auth/${id}`);
       setPosts(res.data);
     } catch (error) {
       console.log(error);
@@ -20,7 +20,7 @@ const Profile = () => {
 
   useEffect(() => {
     fecthById();
-  }, []);
+  }, [id]);
 
   console.log(posts);
 

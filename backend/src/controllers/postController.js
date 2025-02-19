@@ -2,10 +2,11 @@ const Post = require("../models/Post");
 
 const createPost = async (req, res) => {
   console.log("come");
-  
+
   try {
-    const { title, file} = req;
-    let data = {...title };
+    const {body} = req;
+    const file = req.file;
+    let data = {...body };
     console.log(data);
     
     if (file) {
